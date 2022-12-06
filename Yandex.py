@@ -27,7 +27,7 @@ class Poligon:
 		return response.json()
 	
 	def upload_url_file(self, url_file, name_dir, name_file, disable_redirects = True):
-		params = {"disable_redirects":True, "path": f"disk:/{name_dir}/{name_file}", "url":f"{url_file}"}
+		params = {"disable_redirects":disable_redirects, "path": f"disk:/{name_dir}/{name_file}", "url":f"{url_file}"}
 		url = self.urls['resources'] + "/upload"
 		response = requests.post(url, params=params, headers=self.headers)
 		return response.json()
